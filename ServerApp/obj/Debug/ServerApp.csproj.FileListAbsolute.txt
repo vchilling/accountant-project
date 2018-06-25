@@ -1,0 +1,16 @@
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\AccountantDB.mdf
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\AccountantDB_log.ldf
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\ServerApp.exe.config
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\ServerApp.exe
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\ServerApp.pdb
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\EntityFramework.dll
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\bin\Debug\EntityFramework.xml
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\obj\Debug\ServerApp.csprojResolveAssemblyReference.cache
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\obj\Debug\ServerApp.Properties.Resources.resources
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\obj\Debug\ServerApp.csproj.GenerateResource.Cache
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\obj\Debug\ServerApp.exe
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\obj\Debug\ServerApp.pdb
+C:\Users\Николай\Desktop\Accountant Project\ServerApp\obj\Debug\ServerApp.ServerUI.resources
+C:\Users\Николай\Desktop\TU\3kurs\PS\Accountant Project\ServerApp\bin\Debug\ServerApp.exe.config
+C:\Users\Николай\Desktop\TU\3kurs\PS\Accountant Project\ServerApp\obj\Debug\ServerApp.exe
+C:\Users\Николай\Desktop\TU\3kurs\PS\Accountant Project\ServerApp\obj\Debug\ServerApp.pdb

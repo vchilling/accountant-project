@@ -1,0 +1,134 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Windows.Forms;
+
+namespace ClientApp
+{
+    public partial class Form1 : Form
+    {
+        private string myMessage = "";
+        private TcpClient client = new TcpClient();
+        private IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
+
+        public Form1()
+        {
+            InitializeComponent();
+            client.Connect(serverEndPoint);
+            
+        }
+        
+
+        private void RtbClientKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData != Keys.Enter || e.KeyData != Keys.Return)
+            {
+                myMessage += KeycodeToChar(e.KeyValue);
+            }
+            else
+            {
+                SendMessage(myMessage);
+                myMessage = "";
+            
+            }
+        }
+
+        private void SendMessage(string msg)
+        {
+            NetworkStream clientStream = client.GetStream();
+
+            byte[] buffer = Encoding.GetEncoding(1252).GetBytes(msg);
+
+            clientStream.Write(buffer, 0, buffer.Length);
+            clientStream.Flush();
+
+            // Receive the TcpServer.response.
+
+            // Buffer to store the response bytes.
+            Byte[]  data = new Byte[256];
+
+            // String to store the response ASCII representation.
+            String responseData = String.Empty;
+
+            // Read the first batch of the TcpServer response bytes.
+            Int32 bytes = clientStream.Read(data, 0, data.Length);
+            responseData = Encoding.GetEncoding(1252).GetString(data, 0, bytes);
+            
+            rtbClient.AppendText(Environment.NewLine + "From Server: " + responseData);
+        }
+        private String KeycodeToChar(int keyCode)
+        {
+            Keys key = (Keys)keyCode;
+
+            switch (key)
+            {
+                case Keys.Add:
+                    return "+";
+                case Keys.Decimal:
+                    return ".";
+                case Keys.Divide:
+                    return "/";
+                case Keys.Multiply:
+                    return "*";
+                case Keys.OemBackslash:
+                    return "\\";
+                case Keys.OemCloseBrackets:
+                    return "]";
+                case Keys.OemMinus:
+                    return "-";
+                case Keys.OemOpenBrackets:
+                    return "[";
+                case Keys.OemPeriod:
+                    return ".";
+                case Keys.OemPipe:
+                    return "|";
+                case Keys.OemQuestion:
+                    return "/";
+                case Keys.OemQuotes:
+                    return "\"";
+                case Keys.OemSemicolon:
+                    return ";";
+                case Keys.Oemcomma:
+                    return ",";
+                case Keys.Oemplus:
+                    return "+";
+                case Keys.Oemtilde:
+                    return "`";
+                case Keys.Separator:
+                    return "-";
+                case Keys.Subtract:
+                    return "-";
+                case Keys.D0:
+                    return "0";
+                case Keys.D1:
+                    return "1";
+                case Keys.D2:
+                    return "2";
+                case Keys.D3:
+                    return "3";
+                case Keys.D4:
+                    return "4";
+                case Keys.D5:
+                    return "5";
+                case Keys.D6:
+                    return "6";
+                case Keys.D7:
+                    return "7";
+                case Keys.D8:
+                    return "8";
+                case Keys.D9:
+                    return "9";
+                case Keys.Space:
+                    return " ";
+                default:
+                    return key.ToString();
+            }
+        }
+    }
+}
